@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 4</title>
+    <script>
+        function fibonacci() {
+            if (!isNaN(document.getElementById('limite').value) && 1 < (document.getElementById('limite').value)) {
+                var limite = document.getElementById("limite").value;
+                var a = 0;
+                var b = 1;
+                var resultado = 'Resultado: <br>0<br>1<br>'
+                for (let i = 0; i < limite - 2; i++) {
+                    const suma = a + b;
+                    a = b;
+                    b = suma;
+                    resultado += `${b}<br>`;
+                }
+                document.getElementById('out').innerHTML = resultado;
+            } else {
+                document.getElementById('out').innerHTML = 'Error';
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar</a></p>
+    <h1>Serie de fibonacci</h1>
+    Estableza un limite para la serie de fibonacci.<br>
+    Limite: <input type="text" value="10" id="limite"><br>
+    <input type="button" value="Encontrar la serie" onclick="fibonacci()"><br>
+    <p id="out">Resultado:</p><br>
+</body>
+</html>

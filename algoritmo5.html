@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 5</title>
+    <script>
+        function pi() {
+            var iteraciones = parseInt(document.getElementById("iteraciones").value, 10);
+            if (isNaN(iteraciones) || iteraciones <= 0) {
+                document.getElementById("out").innerHTML = "Por favor, ingresa un número válido de iteraciones.";
+                return;
+            }
+
+            var resultado = 0.0;
+            var operacion = `Resultado:<br><br>π = 4 (`;
+
+            for (let i = 1; i < iteraciones * 2; i += 2) {
+                if (i > 1) {
+                    operacion += " ";
+                }
+                if (i == 1) {
+                    operacion += `1/1`;
+                } else {
+                    operacion += `${(i % 4 === 1 ? '+ ' : '- ')}1/${i}`;
+                }
+                resultado += (i % 4 === 1 ? 1 : -1) * (1.0 / i);
+            }
+
+            operacion += ")";
+            var valor = 4 * resultado;
+
+            document.getElementById("out").innerHTML = `${operacion}<br><br>π = ${valor}`;
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar</a></p>
+    <h1>Valor de pi</h1>
+    Número de iteraciones: <input type="text" value="5" id="iteraciones"><br>
+    <input type="button" value="Calcular valor de pi" onclick="pi()"><br>
+    <p id="out">Resultado:</p><br>
+</body>
+</html>

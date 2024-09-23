@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglo 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            color: #34495e;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #contador {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="number"],
+        input[type="submit"],
+        input[type="button"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #2980b9;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:disabled,
+        input[type="button"]:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #3498db;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #3498db;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table#tablaHorizontal, table#tablaHorizontal2, table#tablaHorizontal3 {
+            width: 80%;
+            table-layout: fixed;
+        }
+
+        .tablas-verticales {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        table#tablaVertical, table#tablaVertical2, table#tablaVertical3 {
+            width: 150px;
+            table-layout: fixed;
+            border: none;
+        }
+
+        table#tablaVertical td, table#tablaVertical2 td, table#tablaVertical3 td {
+            border: 1px solid #3498db;
+            padding: 5px;
+        }
+
+        #resultados {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        #resultados p {
+            margin: 0;
+        }
+
+        .regresar {
+            text-align: left;
+            margin-right: 20px;
+            color: #2980b9;
+        }
+    </style>
+    <script src="arreglo1-o.js"></script>
+</head>
+<body onload="aleatorio()">
+    <p class="regresar"><a href="index.html">Regresar</a></p>
+    <h1>Arreglo 1</h1>
+    <p>
+        Capture un arreglo de 10 elementos de tipo entero, imprima el arreglo de forma vertical y horizontal, imprima el arreglo de forma ascendente y descendente, encuentre el elemento de menor, la suma, el promedio o media, la mediana y la moda. Nota: El input donde se capturan los números y el botón deben deshabilitarse al capturar el último elemento del arreglo.
+    </p>
+    
+    <form action="javascript: capturar()">
+        <p style="display: inline;" id="contador">Elemento [0]:</p>
+        <input type="number" id="elementoInput" required>
+        <input type="submit" value="Capturar" id="capturarBoton">
+        <input type="button" value="Reiniciar" onclick="reiniciar()">
+        <input type="button" value="Generar Resultados" id="generarBoton" onclick="calcular()" disabled>
+        
+        <p id="resultados">Esperando datos...</p>
+
+        <table id="tablaHorizontal">
+            <tr id="renglonIndice"></tr>
+            <tr id="renglonDato"></tr>
+        </table>
+        
+        <table id="tablaHorizontal2">
+            <tr id="renglonIndice2"></tr>
+            <tr id="renglonDato2"></tr>
+        </table>
+        
+        <table id="tablaHorizontal3">
+            <tr id="renglonIndice3"></tr>
+            <tr id="renglonDato3"></tr>
+        </table>
+
+        <div class="tablas-verticales">
+            <table id="tablaVertical"></table>
+            <table id="tablaVertical2"></table>
+            <table id="tablaVertical3"></table>
+        </div>
+    </form>
+</body>
+</html>

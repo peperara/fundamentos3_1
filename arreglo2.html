@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglo 2</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+    
+        p {
+            color: #34495e;
+        }
+    
+        form {
+            text-align: center;
+            margin: 20px 0;
+        }
+    
+        select, input[type="button"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+    
+        input[type="button"] {
+            background-color: #2980b9;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        input[type="button"]:hover {
+            background-color: #2471a6;
+        }
+    
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            border: none;
+        }
+    
+        td {
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+    
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            font-size: 18px;
+            color: blue;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        #verificar {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    
+        /* Ocultar las celdas de texto "suma" y "diagonal" */
+        td:empty {
+            visibility: hidden;
+        }
+    
+        .regresar {
+            text-align: left;
+            margin-right: 20px;
+            color: #2980b9;
+        }
+
+    </style>
+    
+    <script src="arreglo2-o.js"></script>
+</head>
+<body onload="generar()">
+    <p class="regresar"><a href="index.html">Regresar</a></p>
+    <h1>Cuadrado Mágico</h1>
+    <p>
+        Los cuadrados mágicos son un conjunto de números enteros diferentes colocados en las casillas de un cuadrado y que se caracterizan porque las sumas de sus filas, columnas y diagonales principales es siempre la misma. El valor de la suma es denominado constante mágica del cuadrado.
+    </p>
+    <p>
+        Seleccione el tamaño del cuadrado:
+        <select id="lados">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="button" value="Generar" onclick="generar()">
+        <input type="button" value="Calcular" onclick="calcular()">
+        <input type="button" value="Ejemplo de cuadrado" onclick="ejemploCuadrado()">
+        <input type="button" value="Ejemplo de cuadrado mágico" onclick="ejemploMagico()">
+        <table border="0.5" id="cuadrado" style="border-collapse: collapse;"></table>
+        <h1 id="verificar" style="color: crimson;"></h1>
+    </p>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 150px);
+            grid-template-rows: repeat(4, 230px);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 150px;
+            height: 230px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .card-front {
+            background-color: #fff;
+            border: 2px solid #ddd;
+        }
+
+        .card-back {
+            background-color: #007BFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            color: white;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+        }
+
+        .card.matched {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .card-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body onload="initGame()">
+    <h1>Juego de Memoria</h1>
+    <button id="restart">Reiniciar</button>
+    <div class="game-board" id="gameBoard"></div>
+    <script src="memorama-o.js"></script>
+</body>
+</html>

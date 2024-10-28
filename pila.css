@@ -1,0 +1,69 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 18px;
+}
+
+td:first-child {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+/* Estilos para el mensaje */
+#mensaje {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+/* Estilos de la imagen */
+img {
+    margin-top: 20px;
+    max-width: 100px;
+    height: auto;
+}
